@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frais et Savoureux</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
+</head>
+<body onload="loadProducts()">
+    <header>
+        <div class="header-content">
+            <h1>Frais et Savoureux</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="navigateTo('home')">Accueil</a></li>
+                    <li><a href="#" onclick="navigateTo('products')">Produits</a></li>
+                    <li><a href="#" onclick="openContactForm()">Contact</a></li>
+                    <li><a href="#" onclick="toggleCart()">Panier (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+        <img src="images/2.jpg" alt="Fruits et Légumes" class="header-img">
+    </header>
+
+    <main>
+        <section id="home" class="section active">
+            <h2>Bienvenue chez SALEFL</h2>
+            <p>Votre destination pour les fruits et légumes frais directement du producteur.</p>
+        </section>
+
+        <section id="products" class="section">
+            <h2>Nos Produits</h2>
+            <div id="product-list" class="product-list"></div>
+        </section>
+
+        <section id="contact" class="section">
+            <form id="contact-form">
+                <h2>Contactez-nous</h2>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+                <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+
+        <div id="cart-modal">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Votre Panier</h2>
+            <div id="cart-items"></div>
+            <button onclick="checkout()">Passer à la caisse</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Frais et Savoureux. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
